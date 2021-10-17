@@ -1,5 +1,6 @@
 package com.project.bingo.pojo;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Random;
@@ -55,7 +56,7 @@ public class TicketTest {
 
     @Test
     public void markCellTest_defaultValue() {
-        Player player = new Player(1);
+        Player player = new Player(3);
         Ticket ticket = new Ticket(player);
         BingoCell[][] board = ticket.getBoard();
         Random rand = new Random();
@@ -77,7 +78,7 @@ public class TicketTest {
 
     @Test
     public void markCellTest_setValue() {
-        Player player = new Player(1);
+        Player player = new Player(4);
         Ticket ticket = new Ticket(player, 4, 10, 3, 20);
         BingoCell[][] board = ticket.getBoard();
         Random rand = new Random();
