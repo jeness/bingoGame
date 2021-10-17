@@ -7,4 +7,5 @@ public class Constants {
     public static final int DEFAULT_LIMIT_NUMBER = 90;
     public static final int DEFAULT_NUM_OF_PLAYER = 5;
     public static final String QUIT = "Q";
+    public static final String NEXT = "N";
 }

@@ -89,12 +89,4 @@ public class Ticket {
             }
         }
     }
-
-    //TODO: pretty print ticket to console
-    public void printTicket() {
-
-    }
-
-
-
 }

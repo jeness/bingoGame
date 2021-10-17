@@ -6,6 +6,7 @@ import com.project.bingo.strategy.FirstFive;
 import com.project.bingo.strategy.FullHouse;
 import com.project.bingo.strategy.TopLine;
 import com.project.bingo.strategy.WinningCombination;
+import com.project.bingo.utils.Constants;
 import com.project.bingo.utils.GameInput;
 import com.project.bingo.utils.RandomValueGenerator;
 
@@ -31,7 +32,7 @@ public class BingoGame {
 
         // get Input from user
         GameInput input = new GameInput(scanner);
-        System.out.println("My input will be ====== " + input);
+//        System.out.println("My input will be ====== " + input);
 
         // init players, tickets and winning combination based on the input/default value
         List<Player> listOfPlayers = loadPlayers(input.getNumbersOfPlayers());
@@ -44,8 +45,8 @@ public class BingoGame {
 
         RandomValueGenerator caller = new RandomValueGenerator(input.getRangeHighest());
         String option = scanner.nextLine();
-        while ("N".equalsIgnoreCase(option)) {
-            oneRond(caller, listOfTickets,winCombSet);
+        while (Constants.NEXT.equalsIgnoreCase(option)) {
+            oneRound(caller, listOfTickets, winCombSet);
             if(gameFinished(winCombSet)) {
                 break;
             } else {
@@ -60,7 +61,7 @@ public class BingoGame {
 
 
     /**
-     * this method is intended to do the business logic of one rand of Bingo Game
+     * this method is intended to do the business logic of one round of Bingo Game
      * 1. caller called a number
      * 2. mark the called number if each of the ticket
      * 3. check if any ticket could claim a winner
@@ -73,7 +74,7 @@ public class BingoGame {
      * @param tickets       list of tickets generated in this game
      * @param winCombSet    winning combinations of this game
      */
-   private static void oneRond(RandomValueGenerator caller, List<Ticket> tickets,
+   private static void oneRound(RandomValueGenerator caller, List<Ticket> tickets,
                                   Set<WinningCombination> winCombSet) {
        int newNumber = caller.generateValue();
        System.out.println("Next Number is: " + newNumber);
